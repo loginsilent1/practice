@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Presentation</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #1a1a2e;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+    .slide {
+      display: none;
+      height: 100vh;
+      padding: 50px;
+      transition: opacity 0.5s ease;
+    }
+    .active {
+      display: block;
+    }
+    h1, h2 {
+      margin: 0 0 20px;
+    }
+    p {
+      font-size: 1.2em;
+    }
+    .nav-buttons {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      background-color: #00adb5;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #007b7f;
+    }
+    .back-link {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      text-decoration: none;
+      color: #00adb5;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-link">⬅ Back to Website</a>
+
+  <section class="slide active">
+    <h1>📊 Explore the Universe</h1>
+    <p>Welcome to our exciting presentation about space, planets, and cosmic mysteries.</p>
+  </section>
+
+  <section class="slide">
+    <h2>🪐 Planets</h2>
+    <p>Planets come in all shapes and sizes. Some have rings, some are rocky, and some are gas giants.</p>
+  </section>
+
+  <section class="slide">
+    <h2>🌌 Galaxies</h2>
+    <p>Galaxies contain billions of stars, each with their own planets and systems. Our galaxy is called the Milky Way.</p>
+  </section>
+
+  <section class="slide">
+    <h2>🕳️ Black Holes</h2>
+    <p>Black holes are one of the most fascinating and extreme phenomena in the universe.</p>
+  </section>
+
+  <section class="slide">
+    <h2>🎉 Thank You!</h2>
+    <p>We hope you enjoyed the journey. Questions?</p>
+  </section>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">⬅ Previous</button>
+    <button onclick="nextSlide()">Next ➡</button>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) slide.classList.add('active');
+      });
+    }
+
+    function nextSlide() {
+      if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        showSlide(currentSlide);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        showSlide(currentSlide);
+      }
+    }
+
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "ArrowRight") nextSlide();
+      if (e.key === "ArrowLeft") prevSlide();
+    });
+  </script>
+
+</body>
+</html>
