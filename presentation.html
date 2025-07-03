@@ -2,89 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Presentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      margin: 0;
-      background-color: #1a1a2e;
-      color: #fff;
-      font-family: 'Segoe UI', sans-serif;
-      overflow: hidden;
-    }
     .slide {
       display: none;
-      height: 100vh;
-      padding: 50px;
-      transition: opacity 0.5s ease;
+      padding: 100px 30px;
+      text-align: center;
+      min-height: 100vh;
     }
     .active {
       display: block;
     }
-    h1, h2 {
-      margin: 0 0 20px;
-    }
-    p {
-      font-size: 1.2em;
-    }
     .nav-buttons {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 20px;
+      text-align: center;
+      margin: 20px;
     }
-    button {
+    .nav-buttons button {
       padding: 12px 24px;
       font-size: 16px;
+      background: #00adb5;
       border: none;
-      background-color: #00adb5;
-      color: #fff;
-      border-radius: 5px;
+      border-radius: 6px;
+      color: white;
       cursor: pointer;
+      margin: 5px;
     }
-    button:hover {
-      background-color: #007b7f;
+    .nav-buttons button:hover {
+      background: #007a7f;
     }
     .back-link {
-      position: absolute;
+      position: fixed;
       top: 20px;
       left: 20px;
       text-decoration: none;
+      background: #222;
+      padding: 8px 16px;
+      border-radius: 5px;
       color: #00adb5;
-      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
+  <div class="stars"></div>
   <a href="index.html" class="back-link">⬅ Back to Website</a>
 
-  <section class="slide active">
+  <div class="slide active">
     <h1>📊 Explore the Universe</h1>
-    <p>Welcome to our exciting presentation about space, planets, and cosmic mysteries.</p>
-  </section>
+    <p>Welcome to our presentation about the cosmos.</p>
+  </div>
 
-  <section class="slide">
+  <div class="slide">
     <h2>🪐 Planets</h2>
-    <p>Planets come in all shapes and sizes. Some have rings, some are rocky, and some are gas giants.</p>
-  </section>
+    <p>Planets are diverse, beautiful, and fascinating. Some are rocky, others gaseous giants.</p>
+    <img src="images/planets.jpg" alt="Planets">
+  </div>
 
-  <section class="slide">
+  <div class="slide">
     <h2>🌌 Galaxies</h2>
-    <p>Galaxies contain billions of stars, each with their own planets and systems. Our galaxy is called the Milky Way.</p>
-  </section>
+    <p>Our Milky Way is just one of billions. Galaxies are cosmic cities of stars.</p>
+    <img src="images/galaxy.jpg" alt="Galaxy">
+  </div>
 
-  <section class="slide">
+  <div class="slide">
     <h2>🕳️ Black Holes</h2>
-    <p>Black holes are one of the most fascinating and extreme phenomena in the universe.</p>
-  </section>
+    <p>Black holes challenge physics and our understanding of time and space.</p>
+    <img src="images/blackhole.jpg" alt="Black Hole">
+  </div>
 
-  <section class="slide">
+  <div class="slide">
     <h2>🎉 Thank You!</h2>
-    <p>We hope you enjoyed the journey. Questions?</p>
-  </section>
+    <p>Hope you enjoyed your trip through the universe!</p>
+  </div>
 
   <div class="nav-buttons">
     <button onclick="prevSlide()">⬅ Previous</button>
@@ -92,31 +83,30 @@
   </div>
 
   <script>
-    let currentSlide = 0;
+    let current = 0;
     const slides = document.querySelectorAll('.slide');
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (i === index) slide.classList.add('active');
+    function showSlide(i) {
+      slides.forEach((s, index) => {
+        s.classList.toggle('active', index === i);
       });
     }
 
     function nextSlide() {
-      if (currentSlide < slides.length - 1) {
-        currentSlide++;
-        showSlide(currentSlide);
+      if (current < slides.length - 1) {
+        current++;
+        showSlide(current);
       }
     }
 
     function prevSlide() {
-      if (currentSlide > 0) {
-        currentSlide--;
-        showSlide(currentSlide);
+      if (current > 0) {
+        current--;
+        showSlide(current);
       }
     }
 
-    document.addEventListener("keydown", function(e) {
+    document.addEventListener("keydown", (e) => {
       if (e.key === "ArrowRight") nextSlide();
       if (e.key === "ArrowLeft") prevSlide();
     });
