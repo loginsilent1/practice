@@ -3,91 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>Explore the Universe</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    * { box-sizing: border-box; }
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #000;
-      color: #fff;
-      scroll-behavior: smooth;
-    }
-
-    .stars {
-      background: url('https://raw.githubusercontent.com/Pixabay/star-background/main/stars.gif') repeat;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: -1;
-    }
-
-    nav {
-      background: rgba(0,0,0,0.8);
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #00ffff;
-    }
-
-    header, section {
-      padding: 100px 30px;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.6);
-    }
-
-    header h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
-
-    section img {
-      max-width: 90%;
-      margin-top: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #fff3;
-    }
-
-    footer {
-      background: #111;
-      color: #aaa;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      background: #00adb5;
-      color: #fff;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .btn:hover {
-      background: #007b7f;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -100,7 +17,7 @@
       <a href="#blackhole">Black Holes</a>
       <a href="#contact">Contact</a>
     </div>
-    <a href="presentation.html" class="btn">🎥 View Presentation</a>
+    <a href="presentation.html" class="btn">🎥 Presentation</a>
   </nav>
 
   <header>
@@ -111,28 +28,28 @@
   <section id="planet">
     <h2>🪐 Planetary Wonders</h2>
     <p>Discover the breathtaking beauty of planets in our solar system and beyond.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Solar_sys8.jpg" alt="Planets"/>
+    <img src="images/planets.jpg" alt="Planets" />
   </section>
 
   <section id="galaxy">
-    <h2>🌠 Galaxies Far, Far Away</h2>
-    <p>Galaxies are sprawling systems of gas and stars bound together by gravity.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Galaxy_cluster_ABELL_1689.jpg" alt="Galaxy"/>
+    <h2>🌠 Galaxies Far Away</h2>
+    <p>Galaxies are massive cosmic structures containing stars, gas, and dust.</p>
+    <img src="images/galaxy.jpg" alt="Galaxy" />
   </section>
 
   <section id="blackhole">
-    <h2>🕳️ Mysterious Black Holes</h2>
-    <p>Black holes are regions in space where gravity is so strong even light can't escape.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Black_hole_-_Messier_87_crop_max_res.jpg" alt="Black Hole"/>
+    <h2>🕳️ Black Holes</h2>
+    <p>Regions in space where gravity is so strong even light can't escape.</p>
+    <img src="images/blackhole.jpg" alt="Black Hole" />
   </section>
 
   <section id="contact">
     <h2>📬 Contact</h2>
-    <p>This is a static site — feel free to customize and extend it!</p>
+    <p>This is a creative static site. Add your own flair!</p>
   </section>
 
   <footer>
-    &copy; 2025 Sanjaya | Designed with ❤️ and imagination
+    &copy; 2025 Sanjaya | Designed with ❤️
   </footer>
 
 </body>
